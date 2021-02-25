@@ -655,10 +655,10 @@ dsconfig set-virtual-attribute-prop \
     --set filter:(objectClass=inetOrgPerson)  \
     --set require-explicit-request-by-name:true 
 
-dsconfig create-web-application-extension \
-    --extension-name Delegator  \
-    --set base-context-path:/delegator  \
-    --set document-root-directory:webapps/delegator/app 
+#dsconfig create-web-application-extension \
+#    --extension-name Delegator  \
+#    --set base-context-path:/delegator  \
+#    --set document-root-directory:webapps/delegator/app 
 
 dsconfig create-web-application-extension \
     --extension-name 'Privacy Dashboard'  \
@@ -667,8 +667,8 @@ dsconfig create-web-application-extension \
 
 dsconfig set-connection-handler-prop \
     --handler-name 'HTTPS Connection Handler'  \
-    --add 'http-servlet-extension:Delegated Admin'  \
-    --add web-application-extension:Delegator  \
+    #--add 'http-servlet-extension:Delegated Admin'  \
+    #--add web-application-extension:Delegator  \
     --add 'web-application-extension:Privacy Dashboard' 
 
 dsconfig set-connection-handler-prop \
