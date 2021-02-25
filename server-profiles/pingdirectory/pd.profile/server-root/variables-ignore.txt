@@ -3,7 +3,7 @@
 
 misc-files/README
 misc-files/example.template
-
+server-root/pre-setup/webapps/privacy-dashboard/assets/vendor-33bf859065cfe2f6e2b8a227cea81ebc.js
 server-root/pre-setup/webapps/delegator/remove-sample-directory-data-aci.ldif
 server-root/pre-setup/webapps/delegator/delegated-admin-account-created.template
 server-root/pre-setup/webapps/delegator/app/favicon.ico
@@ -70,7 +70,6 @@ server-root/pre-setup/webapps/delegator/set-up-delegator.sh
 server-root/pre-setup/webapps/delegator/README.md
 server-root/pre-setup/webapps/delegator/version
 server-root/pre-setup/webapps/delegator/delegated-admin-template.dsconfig
-
 server-root/pre-setup/webapps/privacy-dashboard/index.html
 server-root/pre-setup/webapps/privacy-dashboard/oauth-callback.html
 server-root/pre-setup/webapps/privacy-dashboard/robots.txt
