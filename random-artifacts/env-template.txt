@@ -1,0 +1,69 @@
+# copy this file to .env and customize for your environment
+
+# these must be configured
+PINGDIRECTORY_LICENSE_KEY_FILE=/Users/cleggett/projects/devops/pingdata/bits/PingDirectory.lic
+PINGDATAGOVERNANCE_LICENSE_KEY_FILE=/Users/cleggett/projects/devops/pingdata/bits/PingDataGovernance.lic
+PINGDIRECTORY_ZIP=/Users/cleggett/projects/devops/pingdata/bits/PingDirectory-8.2.0.1.zip
+PINGDATAGOVERNANCE_ZIP=/Users/cleggett/projects/devops/pingdata/bits/PingDataGovernance-8.2.0.1.zip
+PINGDATAGOVERNANCE_PAP_ZIP=/Users/cleggett/projects/devops/pingdata/bits/PingDataGovernance-PAP-8.2.0.1.zip
+
+# the name you'll use in the browser
+PAP_EXTERNAL_HOSTNAME=localhost
+
+# Delegated Admin only works with PingFederate (not PingOne)
+# you'll need a dadmin OAuth client id
+# or your can just use mine, but i'll need add your hostnames for CORS and redirect_url
+PF_EXTERNAL_HOSTNAME=babb-pf.ping-eng.com
+PF_HTTPS_PORT=443
+
+# Privay Dashboard works with either PingFederate or PingOne
+# as long as PF has a JWKS endpoint for the access token
+# as long as P1 has a user(s) who match PingDirectory users by email address
+OAUTH2_SERVER_BASE_URL=https://auth.pingone.com
+OAUTH2_AUTHORIZATION_URL=https://auth.pingone.com/59c5beb4-aba0-4108-a1a0-0d7c44f4d8a9/as/authorize
+OAUTH2_JWKS_URL=https://auth.pingone.com/59c5beb4-aba0-4108-a1a0-0d7c44f4d8a9/as/jwks
+PRIVACY_DASHBOARD_CLIENT_ID=70513e6d-69f2-4a0e-a764-273273662bcd
+
+# mock bank API
+OPEN_BANKING_BASE_URL=https://babbtx-aspsp.herokuapp.com
+OPEN_BANKING_ACCOUNTS_URL=https://babbtx-aspsp.herokuapp.com/OpenBanking/v2/accounts
+
+# for the fakebank UI
+OPEN_BANKING_PROXIED_BASE_URL=https://localhost:28443
+OPEN_BANKING_PROXIED_API_NAMESPACE=open-banking/v2.0
+FAKEBANK_UI_CLIENT_ID=70513e6d-69f2-4a0e-a764-273273662bcd
+FAKEBANK_UI_HTTP_PORT=48000
+FAKEBANK_UI_HTTPS_PORT=48443
+
+# the directory on the host which will be mounted into the containers
+HOST_DIR=/opt/ping
+
+# optionally these can be configured
+# PINGDATAGOVERNANCE_POLICY_SNAPSHOT_FILE=
+
+# alternatively to all of the ZIP and FILE versions above
+# you can have the images be built by downloading those resources from a URL
+
+# PINGDIRECTORY_LICENSE_KEY_URL=
+# PINGDATAGOVERNANCE_LICENSE_KEY_URL=
+# PINGDIRECTORY_ZIP_URL=
+# PINGDATAGOVERNANCE_ZIP_URL=
+# PINGDATAGOVERNANCE_PAP_ZIP_URL=
+
+# all of the defaults below should be OK
+
+LOCATION=Docker
+
+PD_LDAP_PORT=11389
+PD_LDAPS_PORT=11636
+PD_HTTP_PORT=18000
+PD_HTTPS_PORT=18443
+
+PDG_LDAP_PORT=21389
+PDG_LDAPS_PORT=21636
+PDG_HTTP_PORT=28000
+PDG_HTTPS_PORT=28443
+
+PAP_HTTPS_PORT=38443
+
+ADMIN_PASSWORD=2FederateM0re!

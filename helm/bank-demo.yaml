@@ -19,3 +19,19 @@ pingdirectory:
   envs:
     SERVER_PROFILE_URL: https://github.com/chrisleggett/k8s-banking-demo.git
     SERVER_PROFILE_PATH: server-profiles/pingdirectory
+
+    LDAP_PORT: "11389"
+    LDAPS_PORT: "11636"
+    HTTP_PORT: "18000"
+    HTTPS_PORT: "18443"
+    PING_LOCAL_HOST_NAME: pingdirectory
+    CN_ROOT_PASSWORD: 2FederateM0re
+    PF_EXTERNAL_HOSTNAME: babb-pf.ping-eng.com
+    PF_HTTPS_PORT: "443"
+    OAUTH2_SERVER_BASE_URL: https://auth.pingone.com
+    OAUTH2_JWKS_URL: https://auth.pingone.com/59c5beb4-aba0-4108-a1a0-0d7c44f4d8a9/as/jwks
+    OAUTH2_AUTHORIZATION_URL: https://auth.pingone.com/59c5beb4-aba0-4108-a1a0-0d7c44f4d8a9/as/authorize
+    PRIVACY_DASHBOARD_CLIENT_ID: 70513e6d-69f2-4a0e-a764-273273662bcd
+    OPEN_BANKING_ACCOUNTS_URL: https://babbtx-aspsp.herokuapp.com/OpenBanking/v2/accounts
+    INSTALL_DIR: /opt/out/instance
+    PING_INSTANCE_NAME: PD 
