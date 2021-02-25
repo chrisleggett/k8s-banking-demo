@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js" charset="utf-8"></script>
+
+  <link integrity="" rel="stylesheet" href="../vendor-42a99e6b8007efc4d84011808077a9a6.css">
+  <link integrity="" rel="stylesheet" href="../privacy-dashboard-b30e98222e2c4b957bbe442e1b9478d8.css">
+  <link integrity="" rel="stylesheet" href="iframe.css">
+  <script src="iframe.js" charset="utf-8" integrity="sha256-Eeegk/Uopy3FMWadFSYYuEmXz9JCVZtOrELQwSj7wHo= sha512-TdVaR7ZVyhaURmmayfdvNTNfwEugg4C3TX8CIY/c/bswnNGxbU04B8rgDqpK/X1166GIz9nQQ8pe6W5mnsCBPQ==" ></script>
+  <style>
+
+  </style>
+</head>
+<body id="consent-container">
+
+<form id="details-form">
+
+<h4 class="text-section-title">Details</h4>
+
+<p class="text-body">Optionally, choose details you do not wish to share:</p>
+
+<div class="details-form-checkbox-row input-row" style="margin-bottom: 0;">
+  <label class="input-checkbox stacked">
+    <span class="label-text" data-id="label">Total purchase amount</span>
+    <input data-exclude="total" type="checkbox">
+    <span class="icon"></span>
+  </label>
+</div>
+
+<div class="details-form-checkbox-row input-row" style="margin-bottom: 0;">
+  <label class="input-checkbox stacked">
+    <span class="label-text" data-id="label">Item description</span>
+    <input data-exclude="description" type="checkbox">
+    <span class="icon"></span>
+  </label>
+</div>
+
+</form>
+
+<script type="text/javascript">
+
+  var $form = $("#details-form");
+  var defaultConsentDetails = {excluded: {total: false, description: false}};
+  var consentDetails;
+
+  // this script runs after the consent records are loaded by the parent frame
+  // it renders the permissions authorized by the consent record
+  App.onInitialize(function(details) {
+    consentDetails = details || defaultConsentDetails;
+    var excluded = consentDetails.excluded || defaultConsentDetails.excluded;
+    _.each(excluded, function(checked, exclude) {
+      var $checkbox = $form.find("input[type=checkbox][data-exclude=" + exclude + "]");
+      $checkbox.prop("checked", checked);
+    });
+    App.resize();
+  });
+
+  var saveDetails = _.debounce(function() {
+    ["total", "description"].forEach(function(exclude) {
+      var $checkbox = $form.find("input[type=checkbox][data-exclude=" + exclude + "]");
+      consentDetails.excluded[exclude] = $checkbox.prop("checked");
+    });
+    App.saveConsentDetails(consentDetails);
+  }, 200);
+
+  $form.on("change", "input[type=checkbox]", function(evt) {
+    saveDetails();
+  });
+
+</script>
+
+
+</body>
+</html>

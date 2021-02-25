@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Privacy Dashboard</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+<meta name="privacy-dashboard/config/environment" content="%7B%22modulePrefix%22%3A%22privacy-dashboard%22%2C%22environment%22%3A%22production%22%2C%22rootURL%22%3A%22/privacy/%22%2C%22locationType%22%3A%22hash%22%2C%22EmberENV%22%3A%7B%22FEATURES%22%3A%7B%7D%2C%22EXTEND_PROTOTYPES%22%3A%7B%22Date%22%3Afalse%7D%7D%2C%22APP%22%3A%7B%22name%22%3A%22privacy-dashboard%22%2C%22version%22%3A%220.9.0+ff0e8a13%22%7D%2C%22PD_HOST_PORT%22%3A%22PD_HOST_PORT_PLACEHOLDER%22%2C%22OAUTH2_AUTHORIZATION_URL%22%3A%22OAUTH2_AUTHORIZATION_URL_PLACEHOLDER%22%2C%22OAUTH2_CLIENT_ID%22%3A%22privacy-dashboard%22%2C%22OAUTH2_SCOPES%22%3A%22urn%3Apingdirectory%3Aconsent%22%2C%22ember-cli-mirage%22%3A%7B%22usingProxy%22%3Afalse%2C%22useDefaultPassthroughs%22%3Atrue%7D%2C%22exportApplicationGlobal%22%3Afalse%7D" />
+
+    <link integrity="" rel="stylesheet" href="./assets/vendor-42a99e6b8007efc4d84011808077a9a6.css">
+    <link integrity="" rel="stylesheet" href="./assets/privacy-dashboard-b30e98222e2c4b957bbe442e1b9478d8.css">
+
+    
+  </head>
+  <body id="privacy_dashboard">
+    <!-- it's ok if this doesn't exist. it's a way to override the compiled configuration. -->
+    <script src="./assets/config.js"></script>
+
+    <script type="text/javascript">
+      // this gets environment from meta and replaces the rootURL
+      // with the URL this page is loaded on
+      // and optionally replaces some environment configuration
+      // with values from config.js
+      (function() {
+        var meta = document.querySelector('head meta[name="privacy-dashboard/config/environment"]');
+        var env = meta.content;
+        var envj = JSON.parse(decodeURIComponent(env));
+        envj.rootURL = window.location.pathname;
+        // replace environment variables
+        if (typeof(RuntimeConfig) !== "undefined") {
+          Object.keys(RuntimeConfig).forEach(function(key) {
+            envj[key] = RuntimeConfig[key];
+          });
+        }
+        meta.content = encodeURIComponent(JSON.stringify(envj));
+      })();
+    </script>
+
+    
+
+    <script src="./assets/vendor-33bf859065cfe2f6e2b8a227cea81ebc.js" integrity="sha256-UTatXBazx1dbGRzDepobpK8K5xTPvmBgNCrdML2nq5A= sha512-xHkb3G1tqCefXhc0vTd3uPspgXQ0pog+MeuBl/NaugWOLL1Kd3PwzLHbMBjZfdHUfNL7mKtZ33UzWUI9Y8XudA==" ></script>
+    <script src="./assets/privacy-dashboard-1f5198e8c6650f6b806527fe3bfaeb81.js" integrity="sha256-d6eGKwC8XT0WOwXg6JeBD2+ce6hrifHfJXxxKZdr41s= sha512-K3ms89htUbYYEOH4A17m84udn1aR0S7F2q19f54bNchgSCFYmry+KcNd/vPokhQXz2MpZyGJEQ7Oay+c3WwUjA==" ></script>
+
+    <div id="ember-basic-dropdown-wormhole"></div>
+  </body>
+</html>
