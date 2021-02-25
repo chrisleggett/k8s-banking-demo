@@ -1,6 +1,5 @@
 # This file specifies the relative paths of any files that should not have
 # any variables substituted by the manage-profile tool.
-
 misc-files/README
 misc-files/example.template
 server-root/pre-setup/webapps/privacy-dashboard/assets/vendor-33bf859065cfe2f6e2b8a227cea81ebc.js
