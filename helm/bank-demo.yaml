@@ -7,6 +7,7 @@
 global:
   image:
     tag: "edge"  # Uses images with the "edge" tag
+    pullPolicy: "Always"
 
 pingdataconsole:
   enabled: true
@@ -34,4 +35,4 @@ pingdirectory:
     PRIVACY_DASHBOARD_CLIENT_ID: 70513e6d-69f2-4a0e-a764-273273662bcd
     OPEN_BANKING_ACCOUNTS_URL: https://babbtx-aspsp.herokuapp.com/OpenBanking/v2/accounts
     INSTALL_DIR: /opt/out/instance
-    PING_INSTANCE_NAME: PD 
+    PING_INSTANCE_NAME: PD
